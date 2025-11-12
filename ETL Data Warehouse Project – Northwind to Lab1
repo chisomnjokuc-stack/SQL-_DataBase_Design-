@@ -1,0 +1,70 @@
+Overview
+This project demonstrates the design and implementation of an ETL (Extract, Transform, Load) process using SQL Server. The goal is to transform transactional data from the Northwind sample database into a structured data warehouse schema (Lab1) consisting of fact and dimension tables for analytics and reporting.
+
+Objectives
+
+Extract data from Northwind transactional tables.
+Transform data using Common Table Expressions (CTEs) for:
+
+Calculated fields (e.g., LineItemTotal, DaysUntilRequired, DaysToShipped).
+Data cleansing and handling null values.
+
+
+Load transformed data into Lab1 schema tables:
+
+Orders Fact Table
+Product Dimension
+Employee Dimension
+Customer Dimension
+
+
+
+
+Key Features
+
+Fact Table (Orders):
+
+Includes calculated metrics such as LineItemTotal and shipping timelines.
+Primary key generated using OrderID and ROW_NUMBER() for uniqueness.
+
+
+Dimension Tables:
+
+ProductDim: Includes product details, category, and supplier info.
+EmployeeDim: Includes employee demographics and job details.
+CustomerDim: Includes customer contact and location details.
+
+
+Methodologies Used:
+
+ETL Pipeline Design
+Data Modeling (Star Schema)
+SQL Server CTEs and Joins
+Data Quality Handling with ISNULL
+
+
+
+
+Technologies
+
+Database: SQL Server
+Source: Northwind_TC database
+Target: Lab1 schema
+SQL Concepts: CTEs, Joins, DATEDIFF, ISNULL, CAST, ROW_NUMBER()
+
+
+How to Run
+
+Ensure Northwind_TC and Lab1 databases exist in your SQL Server instance.
+Execute the script in SQL Server Management Studio (SSMS):
+
+Creates CTEs for Orders, Products, Employees, and Customers.
+Inserts transformed data into Lab1 tables.
+
+
+Verify data in:
+
+Lab1.dbo.Orders
+Lab1.dbo.ProductDim
+Lab1.dbo.EmployeeDim
+Lab1.dbo.CustomerDim
